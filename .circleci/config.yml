@@ -39,8 +39,8 @@ jobs:
           name: Running coverage
           command: |
             . venv/bin/activate
-            pytest --cov
             pip install coverage
+            pytest --cov
             #coverage run --source='.' manage.py test   
             coverage report --fail-under=100    
       - store_test_results:

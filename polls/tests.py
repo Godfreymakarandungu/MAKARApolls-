@@ -10,7 +10,7 @@ from model_mommy import mommy
 from model_mommy.recipe import Recipe, foreign_key
 from mock import Mock, patch, PropertyMock
 
-
+#############################makarawazhia##################################
 ###########################################################################
 ###########################################################################
 ###########################################################################
@@ -149,27 +149,27 @@ class VoteTest(TestCase):
 ###########################################################################
 
 
-# class Test_Questions_Date(TestCase):
-#     def mock_question(self):
+class Test_Questions_Date(TestCase):
+    def mock_question(self):
        
-#         return Mock(
-#             question_text='Test',
-#             pub_date=(timezone.now() + datetime.timedelta(days=days)),
-#         )
+        return Mock(
+            question_text='Test',
+            pub_date=(timezone.now() + datetime.timedelta(days=days)),
+        )
 
-#     def test_was_published_recently_with_future_question(self):
-#         time = timezone.now() + datetime.timedelta(days=30)
-#         future_question = Question(pub_date=time)
-#         self.assertIs(future_question.was_published_recently(), False)
+    def test_was_published_recently_with_future_question(self):
+        time = timezone.now() + datetime.timedelta(days=30)
+        future_question = Question(pub_date=time)
+        self.assertIs(future_question.was_published_recently(), False)
 
-#     def test_was_published_recently_with_old_question(self):
-#         time = timezone.now() - datetime.timedelta(days=30)
-#         old_question = Question(pub_date=time)
-#         self.assertIs(old_question.was_published_recently(), False)
+    def test_was_published_recently_with_old_question(self):
+        time = timezone.now() - datetime.timedelta(days=30)
+        old_question = Question(pub_date=time)
+        self.assertIs(old_question.was_published_recently(), False)
 
-#     def test_was_published_recently_with_recent_question(self):
-#         time = timezone.now() - datetime.timedelta(hours=1)
-#         recent_question = Question(pub_date=time)
-#         self.assertIs(recent_question.was_published_recently(), True)
+    def test_was_published_recently_with_recent_question(self):
+        time = timezone.now() - datetime.timedelta(hours=1)
+        recent_question = Question(pub_date=time)
+        self.assertIs(recent_question.was_published_recently(), True)
 
 
