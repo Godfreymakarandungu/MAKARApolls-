@@ -29,12 +29,19 @@ jobs:
           paths:
             - ".venv"
             - "/usr/local/bin"
-            - "/usr/local/lib/python3.6/site-packages"
+      #       - "/usr/local/lib/python3.6/site-packages"
+      # - run:
+      #     name: run tests
+      #     command: |
+      #       . venv/bin/activate
+      #       tox
       - run:
-          name: run tests
+          name: Running coverage
           command: |
             . venv/bin/activate
-            tox
+            pip install coverage
+            coverage run --source='.' manage.py test   
+            coverage report --fail-under=100    
       - store_test_results:
           path: test-results
       - store_artifacts:
